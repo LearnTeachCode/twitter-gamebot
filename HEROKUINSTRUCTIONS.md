@@ -137,3 +137,7 @@ _from the application directory_
 ```python
 heroku logs
 ```
+
+## Heroku DB's
+consult Heroku documentation for cool stuff.  Not all lib's are going to work the same way up in da :cloud:
+
