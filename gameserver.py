@@ -26,7 +26,7 @@ def gameLogic():
 	pass
 
 def main():
-	logging.basicConfig(filename='application.log', level=logging.INFO)
+	logging.basicConfig(level=logging.INFO)
 	logging.info('gameserver starting')
 	
 	sqlStart()

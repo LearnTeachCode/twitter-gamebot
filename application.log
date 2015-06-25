@@ -1,5 +1,0 @@
-INFO:root:gameserver starting
-INFO:root:sqlStart
-INFO:root:sqlConnection :: sqlconn
-INFO:root:sqlClose :: conn
-INFO:root:filterSQLResult :: value
