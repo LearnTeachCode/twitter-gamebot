@@ -56,7 +56,7 @@ _connect your Heroku app into your git repository by adding the Heroku git repo 
 
 ```python
 git init
-heroku git::remote -a application-name-xxxx
+heroku git:remote -a application-name-xxxx
 ```
 
 ## Heroku-izing your Python application
