@@ -1,5 +1,13 @@
 # twitter-gamebot
 This is our game bot for playing games on twitter!
 
-Week 1 Sprints
-Kathryn was here :D
+
+### A few scratch notes, please don't remove :heart:
+
+####config.vars
+```python
+{
+        'apiKey': 'somevalue',
+        'username': 'namevalue'
+}
+```
