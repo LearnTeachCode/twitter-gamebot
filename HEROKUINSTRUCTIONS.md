@@ -30,7 +30,13 @@ pip install xxx
 
 ## Create you application
 
+```python
 application-name-xxxx.py
+
+code code code 
+
+
+```
 
 ## Deployment
 
@@ -59,21 +65,28 @@ Procfile
 .gitignore
 ```
 
-requirements.txt
+#### requirements.txt
 _run this any time you update your libraries_
-pip freeze > requirements.txt
 
-runtime.txt
+```python
+pip freeze > requirements.txt
+```
+
+#### runtime.txt
 This file tells Heroku what version of python to run your application. You should set it to the version you're using in your virtual environment.
 
+```python
 python-2.7.10
+```
 
-Procfile
+#### Procfile
 This file tells Heroku about the processes needed for your app.  You'll need to consult the Heroku documentation in order to decide which process best fits your need.
 
+```python
 worker: python application-name-xxxx.py
+```
 
-.gitignore
+#### .gitignore
 
 ```python
 __pycache__/
@@ -86,9 +99,12 @@ env/
 heroku config:set VAR1=value1 VAR2=value2
 
 Accessing in code:
+
+```python
 import os
 os.environ['VAR1'] _gets value1_
 os.environ['VAR2'] _gets value2_
+```
 
 ## Push to github
 
@@ -113,4 +129,7 @@ log in to Heroku, go to your application dashboard, and increase the number of d
 ## Viewing output and logs
 
 _from the application directory_
+
+```python
 heroku logs
+```
