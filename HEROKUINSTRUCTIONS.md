@@ -50,7 +50,8 @@ _create a heroku application_
 heroku create application-name-xxxx
 ```
 
-_You'll see an app-name and a git-address_
+_This will return an app-name and a git-address_ : JOT THEM DOWN
+
 _connect your Heroku app into your git repository by adding the Heroku git repo as a remote_
 
 ```python
