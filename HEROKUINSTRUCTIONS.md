@@ -1,9 +1,10 @@
 # Python + Heroku = :heart:
 
-Python is a philosophy of elegance that spawned a community which speaks a common-enough programming language aimed at tying imagination into practicality.
-Heroku is a Platform as a Service (PaaS) host for deploying applications.
+**Python** is a philosophy of elegance that spawned a community which speaks a common-enough programming language aimed at tying imagination into practicality.
 
-## Prerequisites
+[**Heroku**](https://www.heroku.com/) is a Platform as a Service (PaaS) host for deploying applications.
+
+## Prerequisites :heavy_check_mark:
 * [Heroku toolbelt](https://toolbelt.heroku.com/)
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Python](https://www.python.org/)
@@ -20,7 +21,11 @@ virtualenv --python=pythonX.X env
 source env/bin/activate
 ```
 
-This will create a _virtual python environment_ for Python X.X (_pick a version_) in a directory named env. python --version will show you that the version which you requested is not your _system default python_! :heart:
+This will create a _virtual python environment_ for Python X.X (_pick a version_) in a directory named env. 
+```python
+python --version
+```
+will show you that the version which you requested is not your _system default python_! :heart:
 
 _Install any required python libraries into your virtual enviornment_
 
@@ -28,14 +33,13 @@ _Install any required python libraries into your virtual enviornment_
 pip install xxx
 ```
 
-## Create you application
+## Create your application
 
 ```python
 application-name-xxxx.py
-
+------------------------
+import bla bla bla 
 code code code 
-
-
 ```
 
 ## Deployment
@@ -58,12 +62,11 @@ heroku git::remote -a application-name-xxxx
 
 _you'll need the following files_
 
-```python
-requirements.txt
-runtime.txt
-Procfile
-.gitignore
-```
+
+* requirements.txt
+* runtime.txt
+* Procfile
+* .gitignore
 
 #### requirements.txt
 _run this any time you update your libraries_
@@ -95,9 +98,9 @@ env/
 ```
 
 ## Environment variables
-
+```python
 heroku config:set VAR1=value1 VAR2=value2
-
+```
 Accessing in code:
 
 ```python
@@ -124,7 +127,7 @@ git push heroku master
 
 #First deployment
 
-log in to Heroku, go to your application dashboard, and increase the number of dynos allocated to your application to 1
+_log in to Heroku, go to your application dashboard, and increase the number of dynos allocated to your application to 1_
 
 ## Viewing output and logs
 
