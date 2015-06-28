@@ -1,6 +1,7 @@
 import os
 import time
 import sqlite3
+import re
 from twython import Twython
 #import apikeys as keys
 import logging
