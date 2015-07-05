@@ -15,13 +15,21 @@ heroku
 #####gameserver.py
 
 reads in the bot api keys from config.vars
+
 makes sure it is authenticated on the twitter api :-D
+
 checks to see if a game is in progress (postgres db: active game, moves)
+
 if no game is playing, gameserver pulls a game from a list of available games and sets that game as being active (postgres)
+
 players both tweet the game they're starting and their opponent
+
 the loser of the last game starts off the new game
+
 player 1 and 2 alternate moves until a winner is found
+
 the game stops, the db is updated with:
+
 	Player that won, game that was won, number of moves
 
 #####config.vars
