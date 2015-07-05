@@ -2,9 +2,13 @@ import os
 import time
 import sqlite3
 import re
+import random
 from twython import Twython
 #import apikeys as keys
 import logging
+
+def sqlAuthenticate():
+	#authenticate stuff
 
 def sqlStart():
 	logging.info('sqlStart')
@@ -18,13 +22,35 @@ def sqlClose(conn):
 	logging.info('sqlClose' + " :: " + str(conn))
 	#conn.close()
 
-def filterSQLResult(string):
-	logging.info('filterSQLResult' + " :: " + str(string))
-	#string = string.split("delimiter")
-	#return string[1]#whatever you want to do
+def chooseRandomGame():
+	listOfGames = os.listdir("games/")
+	randGame = random.choice(listOfGames)
+	game = __import__(randGame)
+	return game
+	
+def identifyGame():
+	return 1#figure out which game is currently being played, sql likely
+
+def startAIGame():
+	#start a game between randomly chosen but different AI bots from a list of bots
+	bot1,bot2 = random.sample(botList,2)#chooses two unique bots at random from the list of bots
+	game = chooseRandomGame()
+	#probably a unique game identifier should be made to figure out who is playing who
+	game.play_moves() #probably have parameters here defining which player is making the move
+
+def checkGameQueue():
+	#find if any games are ongoing OR if no games are being played
+	return 1
 
 def gameLogic():
-	pass
+	#should a bot be playing more than one game at a time?
+	if checkGameQueue():#if a game is being played
+		newMoves = checkTwitterMoves()
+		currentGame = identifyGame()
+		currentGame.play_moves()
+	else:#if no games being played
+		game = chooseRandomGame()
+		startAIGame()#etc. etc. 		
 
 def main():
 	logging.basicConfig(level=logging.INFO)
