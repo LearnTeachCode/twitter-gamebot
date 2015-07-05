@@ -7,6 +7,10 @@ from twython import Twython
 #import apikeys as keys
 import logging
 
+########################################################
+##################    SQL CODE     #####################
+########################################################
+
 def sqlAuthenticate():
 	#authenticate stuff
 
@@ -21,26 +25,46 @@ def sqlConnection(sqlconn):
 def sqlClose(conn):
 	logging.info('sqlClose' + " :: " + str(conn))
 	#conn.close()
+	
+def findActiveGameIDs():
+	return 1#return game IDs or an empty list for no active games
+	
+def insertNewGame(players,gameName):#players is a tuple of two players
+	p1,p2 = players
+	return 1 
+	
+def insertMove(gameMove):
+	return 1 #insert a new move from the twitter feed into the database
+	
+def getGameMovesFromID(gameID):
+	return 1 #retrieve entire list of game moves for a particular game ID, to draw a game image
+	
+def getGameNameFromID(gameID):
+	return 1 #retrieve what game is being played based on the game ID
+
+def getGamePlayersFromID(gameID):
+	return 1 #retrieve names of players from a game ID
+	
+def getGameStatusFromID(gameID):
+	return 1 #if game is active or not, from a game ID
+	
+########################################################
+##################    SQL CODE     #####################
+########################################################
+
 
 def chooseRandomGame():
 	listOfGames = os.listdir("games/")
 	randGame = random.choice(listOfGames)
-	game = __import__(randGame)
+	game = __import__('games/'+randGame)#import the game module
 	return game
-	
-def identifyGame():
-	return 1#figure out which game is currently being played, sql likely
 
-def startAIGame():
+def startBotGame():
 	#start a game between randomly chosen but different AI bots from a list of bots
 	bot1,bot2 = random.sample(botList,2)#chooses two unique bots at random from the list of bots
 	game = chooseRandomGame()
 	#probably a unique game identifier should be made to figure out who is playing who
 	game.play_moves() #probably have parameters here defining which player is making the move
-
-def checkGameQueue():
-	#find if any games are ongoing OR if no games are being played
-	return 1
 
 def gameLogic():
 	#should a bot be playing more than one game at a time?
@@ -50,7 +74,7 @@ def gameLogic():
 		currentGame.play_moves()
 	else:#if no games being played
 		game = chooseRandomGame()
-		startAIGame()#etc. etc. 		
+		startAIGame()#etc. etc.
 
 def main():
 	logging.basicConfig(level=logging.INFO)
