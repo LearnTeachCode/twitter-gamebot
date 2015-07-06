@@ -2,8 +2,8 @@ import os, time, re, logging, requests, json
 from twython import Twython
 from random import randint
 from pprint import pprint
-from player_class import Player
-from game_class import Game
+from player import Player
+from gameserver import GameServer
 
 def tweet(player, message):
 	logging.info('tweet :: ' + player + ' :: ' + message) 
@@ -20,10 +20,9 @@ def main():
 	logging.info('gameserver starting')
 	cfg = loadConfig()
 	
-	##  gameserver()
-	##  
+	#gameserver
 	
-	prs = Game(cfg)
+	prs = GameServer(cfg)
 	prs.checkInProgress()
 
 if __name__ == "__main__":

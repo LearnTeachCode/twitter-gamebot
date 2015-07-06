@@ -1,6 +1,7 @@
-class database:
+class Database:
 
 	def sqlAuthenticate(self):
+		logging.info('sqlAuthenticate')
 		#authenticate stuff
 
 	def sqlStart(self):
