@@ -2,36 +2,16 @@ import os, time, re, logging, requests, json
 from twython import Twython
 from random import randint
 from pprint import pprint
+from player_class import Player
+from game_class import Game
 
-def tweet(player, message):
-	logging.info('tweet :: ' + player + ' :: ' + message) 
-
-#loads the config variables from a file called config.vars
-def loadConfig():
-	logging.info('loadConfig :: opening config.vars')
-	with open('config.vars') as conf:
-		data = json.load(conf)
-	return data
-
-class player(object):
-	name = ""
-	attitude = ""
-	apiKey = ""
-	apiSecret = ""
-	
-	def __init__(self, cfg):
-		self.name = cfg['player'][0]['name']
-		self.attitude = cfg['player'][0]['attitude']
-		self.apiKey = cfg['player'][0]['APP_KEY']
-		self.Secret = cfg['player'][0]['APP_SECRET']
-
-class game(object):
+class Game(object):
 	gameState = {}
 	playerOne = []
 	#playerTwo = player("")
 		
 	def __init__(self, cfg):
-		self.playerOne = player(cfg)	
+		self.playerOne = Player(cfg)
 		print self.playerOne.name
 	#checks the db to see if a game is in progress
 	#if it is, then it loads the current state of the game
@@ -109,17 +89,3 @@ class game(object):
                 if (player1 == 2 and player2 == 1):
                         print "player 2 winner"	
 		self.checkWin()
-
-def main():
-	logging.basicConfig(level=logging.INFO)
-	logging.info('gameserver starting')
-	cfg = loadConfig()
-	
-	##  gameserver()
-	##  
-	
-	prs = game(cfg)
-	prs.checkInProgress()
-
-if __name__ == "__main__":
-	main()
