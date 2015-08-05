@@ -2,3 +2,4 @@
 This is our game bot for playing games on twitter!
 
 Week 1 Sprints
+Bridget was here :-)
