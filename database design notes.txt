@@ -1,0 +1,21 @@
+id
+(unique num)
+
+twitter name
+(string for twitter handle)
+
+gameID
+(unique game identifier, for matching against two players)
+
+game
+(the name of the game based on the naming of the game file i.e. game.py)
+
+game status
+(game state - ongoing or finished)
+
+game move
+(text for describing the game move)
+
+
+#optional
+#including opponent name
